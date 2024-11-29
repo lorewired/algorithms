@@ -1,0 +1,1 @@
+{"name":"Local: sbc","url":"c:\\Users\\lorec\\Desktop\\algorithms\\STL\\sbc.cpp","tests":[{"id":1731948391779,"input":"hoje eu visitei meus pais\n.","output":"h. eu v. m. p.\n4\nh. = hoje\nm. = meus\np. = pais\nv. = visitei"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\lorec\\Desktop\\algorithms\\STL\\sbc.cpp","group":"local","local":true}
