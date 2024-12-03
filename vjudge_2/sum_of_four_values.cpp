@@ -13,26 +13,31 @@ signed main(){
   cin.tie(nullptr);
   int n, t;
   cin >> n >> t;
-  if (n < 3) {
+  if (n < 4) {
     cout << "IMPOSSIBLE\n";
-  } else {
+  }
+  else {
     vector<pair<int, int>> v(n);
     for (int i = 0; i < n; i++) {
       v[i].s = i+1;
       cin >> v[i].f;
     }
-    sort(all(v));
+    map<int, vector<pair<int, int>>> mp;
     for (int i = 0; i < n; i++) {
       for (int j = i+1; j < n; j++) {
         int diff = t - (v[i].f + v[j].f);
-        int low = lb(v.begin()+j+1, v.end(), make_pair(diff,-1)) - v.begin();
-        if (low < n && v[i].f + v[j].f + v[low].f == t) {
-          cout << v[i].s << ' ' << v[j].s << ' ' << v[low].s << '\n';
-          return 0;
+        if (mp.count(diff)) {
+          for (auto p : mp[diff]) {
+            if (p.f != v[i].s && p.f != v[j].s && p.s != v[i].s && p.s != v[j].s) {
+              cout << v[i].s << ' ' << v[j].s << ' ' << p.f << ' ' << p.s << '\n';
+              return 0;
+            }
+          }
         }
+        mp[v[i].f + v[j].f].pb({v[i].s, v[j].s});
       }
     }
     cout << "IMPOSSIBLE\n";
   }
   return 0;
-}
+}   
