@@ -1,47 +1,36 @@
 #include <bits/stdc++.h>
-using namespace std;
-#define int long long
 #define f first
 #define s second
 #define pb push_back
+#define lb lower_bound
+#define ub upper_bound
 #define sz(x) (int)x.size()
-
-void solve () {
-  int s, t;
-  cin >> s >> t;
-  vector<int> bin(s), pref(s+1, 0);
-  for (int &i : bin) cin >> i;
-  for (int i = 0; i < s; i++)
-    pref[i+1] = bin[i] + pref[i];
-  
-  int op = 0, l = s/2-1, r = s/2, flo = -1, fro = -1;
-  bool s_o=0, t_found=0;
-
-
-  while (l > -1 || r < s) {
-    if (s_o) {
-      flo = flo == -1 && bin[l] ? l : flo;
-      fro = fro == -1 && bin[r] ? r : fro;
-      if (flo!=-1 && fro!=-1)
-        s_o = false;
-    }
-    if (flo != -1 && l>=0) op++;
-    if (fro != -1 && r<s) op++;
-    if (!t_found && pref[r] - pref[l-(!l ? 0 : 1)] == t) {
-      s_o = true;
-      t_found = true;
-    }
-    l--; r++;
-  }
-  cout << op << '\n';
-}
+#define all(x) x.begin(), x.end()
+using namespace std;
 
 signed main(){
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
-  int n;
-  cin >> n;
-  while (n--) {
-    solve();
+  int c, s, t;
+  cin >> c;
+  while (c--) {
+    cin >> s >> t;
+    vector<int> v(s), pref(s);
+    for (int &i : v) cin >> i;
+    pref[0] = v[0];
+    for (int i = 1; i < s; i++)
+      pref[i] = v[i] + pref[i - 1];
+    int l = sz(v)/2-1, r = sz(v)/2;
+    if (pref[s-1] < t) {
+      cout << -1;
+    } else {
+      cout << pref[s-2]-pref[]
+      //while (l >= 0 || r < s) {
+      //  
+      //}
+    }
+
+    cout << '\n';
   }
+  return 0;
 }
