@@ -16,15 +16,13 @@ signed main(){
   cin.tie(nullptr);
   int n;
   cin >> n;
-  set<string> st;
+  map<string, int> mp;
   while (n--) {
     string str;
     cin >> str;
-    if (st.count(str)) cout << "YES\n";
-    else {
-      cout << "NO\n";
-      st.insert(str);
-    }
+    if (mp.count(str)) cout << str + to_string(mp[str]) << '\n';
+    else cout << "OK\n";
+    mp[str]++;
   }
   return 0;
 }

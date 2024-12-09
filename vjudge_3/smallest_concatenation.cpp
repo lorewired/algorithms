@@ -16,15 +16,13 @@ signed main(){
   cin.tie(nullptr);
   int n;
   cin >> n;
-  set<string> st;
-  while (n--) {
-    string str;
-    cin >> str;
-    if (st.count(str)) cout << "YES\n";
-    else {
-      cout << "NO\n";
-      st.insert(str);
-    }
-  }
+  vector<string> v(n);
+  for (string &str : v) cin >> str;
+  sort(all(v), [] (const string a, const string b) {
+    int sa = sz(a), sb = sz(b);
+    return sa == sb ? a < b : sa 
+  });
+  for (string str : v) cout << str;
+  cout << '\n';
   return 0;
 }

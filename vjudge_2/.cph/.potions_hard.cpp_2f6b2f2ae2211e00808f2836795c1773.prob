@@ -1,0 +1,1 @@
+{"name":"Local: potions_hard","url":"c:\\Users\\lorec\\Desktop\\algorithms\\vjudge_2\\potions_hard.cpp","tests":[{"id":1733513103760,"input":"6\n4 -4 1 -3 1 -3\n","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\lorec\\Desktop\\algorithms\\vjudge_2\\potions_hard.cpp","group":"local","local":true}

@@ -14,17 +14,22 @@ using namespace std;
 signed main(){
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
-  int n;
-  cin >> n;
-  set<string> st;
+  int n, m;
+  cin >> n >> m; cin.ignore();
+  map<string, string> sv;
+  string l, a, b;
   while (n--) {
-    string str;
-    cin >> str;
-    if (st.count(str)) cout << "YES\n";
-    else {
-      cout << "NO\n";
-      st.insert(str);
-    }
+    getline(cin, l);
+    stringstream ss(l);
+    ss >> a >> b;
+    sv[b] = a;
+  }
+  while (m--) {
+    getline(cin, l);
+    stringstream ss(l);
+    ss >> a >> b;
+    b.pop_back();
+    cout << a << ' ' << b << "; #" << sv[b] << '\n';
   }
   return 0;
 }

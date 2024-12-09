@@ -2,8 +2,6 @@
 #define f first
 #define s second
 #define pb push_back
-#define lb lower_bound
-#define ub upper_bound
 #define pi pair<int, int>
 #define bg begin()
 #define en end()
@@ -16,15 +14,6 @@ signed main(){
   cin.tie(nullptr);
   int n;
   cin >> n;
-  set<string> st;
-  while (n--) {
-    string str;
-    cin >> str;
-    if (st.count(str)) cout << "YES\n";
-    else {
-      cout << "NO\n";
-      st.insert(str);
-    }
-  }
+  
   return 0;
 }
