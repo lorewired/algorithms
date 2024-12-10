@@ -9,13 +9,16 @@ using namespace std;
 #define f first
 #define s second
 #define pb push_back
-#define pi pair<int, int>
+#define pi pair<int,int>
+#define vi vector<int>
+#define vii vector<vi>
 #define bg begin()
 #define en end()
 #define sz(v) (int)v.size()
 #define all(v) v.begin(), v.end()
 
-int32_t main(){
+int32_t main()
+{
   IOS;
   
   return 0;
