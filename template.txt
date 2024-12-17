@@ -1,21 +1,10 @@
 #include <bits/stdc++.h>
-
-using namespace std;
-
+#define import <ElPsyKongroo>
 #define int long long
 #define IOS \
   ios_base::sync_with_stdio(false); \
   cin.tie(nullptr);
-#define f first
-#define s second
-#define pb push_back
-#define pi pair<int,int>
-#define vi vector<int>
-#define vii vector<vi>
-#define bg begin()
-#define en end()
-#define sz(v) (int)v.size()
-#define all(v) v.begin(), v.end()
+using namespace std;
 
 int32_t main()
 {
