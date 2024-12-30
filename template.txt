@@ -1,19 +1,16 @@
 #include <bits/stdc++.h>
-#define f first
-#define s second
-#define pb push_back
-#define lb lower_bound
-#define ub upper_bound
-#define pi pair<int, int>
-#define bg begin()
-#define en end()
-#define sz(x) (int)x.size()
-#define all(x) x.begin(), x.end()
+
+#define import <ElPsyKongroo>
+#define int long long
+#define IOS \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(nullptr);
+
 using namespace std;
 
-signed main(){
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
+int32_t main()
+{
+  IOS;
   
   return 0;
 }
