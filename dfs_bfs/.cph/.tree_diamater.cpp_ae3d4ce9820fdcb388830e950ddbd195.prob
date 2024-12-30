@@ -1,0 +1,1 @@
+{"name":"Local: tree_diamater","url":"c:\\Users\\lorec\\Desktop\\algorithms\\bfs_flood_fill\\tree_diamater.cpp","tests":[{"id":1735241899025,"input":"5\n1 2\n1 3\n3 4\n3 5\n","output":"3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\lorec\\Desktop\\algorithms\\bfs_flood_fill\\tree_diamater.cpp","group":"local","local":true}

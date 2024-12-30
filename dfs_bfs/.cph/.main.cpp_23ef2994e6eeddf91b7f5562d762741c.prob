@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"c:\\Users\\lorec\\Desktop\\algorithms\\bfs_flood_fill\\main.cpp","tests":[{"id":1734375085771,"input":"7 4\n1 2\n3 4\n4 5\n6 7\n","output":"2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\lorec\\Desktop\\algorithms\\bfs_flood_fill\\main.cpp","group":"local","local":true}

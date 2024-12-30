@@ -1,0 +1,7 @@
+{
+    "vscord.enabled": false,
+    "files.associations": {
+        "iostream": "cpp",
+        "*.tcc": "cpp"
+    }
+}

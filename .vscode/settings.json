@@ -70,5 +70,5 @@
       "valarray": "cpp",
       "string_view": "cpp"
    },
-   "vscord.enabled": false
+   "vscord.enabled": true
 }
