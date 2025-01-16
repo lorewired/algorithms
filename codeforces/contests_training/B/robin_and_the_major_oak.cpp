@@ -8,7 +8,15 @@ using ll = long long;
 */
 
 void solve() {
-    
+    int n, k;
+    cin>>n>>k;
+    ll ans=0;
+    for(int i=k; i<=n; i++) {
+        //cout<<pow(i,i)<<'\n';
+        ans+=pow(i,i);
+    }
+    cout<<ans<<'\n';
+    cout<<(ans&1?"NO\n":"YES\n");
 }
 
 

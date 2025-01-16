@@ -26,8 +26,48 @@ signed main(){
       if (r >= n) cout << " X";
       else cout << ' ' << a[r];
       if (i+1 < n) cout << '\n';
-      //cout << (!less ? "X" : to_string(less)) << ' ' << (r>=n ? "X" : to_string(a[r])) << (i+1 == n ? "" : "\n");
     }
   }
   return 0;
 }
+
+/*
+APENAS COM UPPER_BOUND
+
+#include <bits/stdc++.h>
+#define import <ElPsyKongroo>
+#define io ios_base::sync_with_stdio(false);
+#define ll long long
+using namespace std;
+
+signed main() {
+    io;
+    int n, q;
+    cin >> n;
+    int arr[n];
+    for (int &i : arr)
+        cin >> i;
+    cin >> q;
+    for (int i = 0; i < q; i++) {
+        int x;
+        cin >> x;
+        int idx = upper_bound(arr, arr+n, x) - arr;
+        int ant, post;
+        if (arr[idx-1] != x) {
+            if (idx-1 < 0) ant = -1;
+            else ant = arr[idx-1];
+        } else {
+            int cur = idx-1;
+            while (arr[cur] == x) {
+                cur--;
+            }
+            if (cur < 0) ant = -1;
+            else ant = arr[cur];
+        }
+        post = idx >= n ? -1 : arr[idx];
+        cout << (ant == -1 ? "X" : to_string(ant)) << ' ';
+        cout << (post == -1 ? "X" : to_string(post)) << '\n';
+    }
+    return 0;
+}
+*/

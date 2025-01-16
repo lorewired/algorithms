@@ -8,7 +8,18 @@ using ll = long long;
 */
 
 void solve() {
-    
+    int n, m, strip=0, ans=0, pass=0;
+    cin>>n>>m;
+    while (n--) {
+        string s;
+        cin>>s;
+        if (strip+s.size()>m) pass=1;
+        if (!pass) {
+            strip+=s.size();
+            ans++;
+        }
+    }
+    cout<<ans<<'\n';
 }
 
 

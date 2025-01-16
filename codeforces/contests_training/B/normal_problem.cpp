@@ -8,7 +8,14 @@ using ll = long long;
 */
 
 void solve() {
-    
+    string s;
+    cin>>s;
+    for(int i=s.size()-1; i>=0; i--) {
+        if(s[i]=='p') cout<<'q';
+        else if(s[i]=='q') cout<<'p';
+        else cout<<'w';
+    }
+    cout<<'\n';
 }
 
 

@@ -22,7 +22,7 @@ signed main(){
     switch(x){
     case 1: v1[i]=1; break;
     case 2: v2[i]=1; break;
-    case 3: v3[i]=1; break;
+    case 3: v3[i]=1; break; 
     }
   }
   for(int i=1;i<n;i++){

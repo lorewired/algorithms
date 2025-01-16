@@ -8,7 +8,9 @@ using ll = long long;
 */
 
 void solve() {
-    
+    int n;
+    cin>>n;
+    cout<<n-1<<'\n';
 }
 
 

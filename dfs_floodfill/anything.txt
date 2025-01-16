@@ -1,0 +1,14 @@
+bool dfs(ll s, ll p) {
+  visited[s] = true;
+  for (auto ch : adj[s]) {
+    if (ch != p && visited[ch]) {
+      return true;
+    }
+    if (!visited[ch]) {
+      if (dfs(ch, s)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

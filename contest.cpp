@@ -1,23 +1,22 @@
 #include <bits/stdc++.h>
-#define import <ElPsyKongroo>
-#define io ios_base::sync_with_stdio(false);
-#define ll long long
 using namespace std;
+using ll = long long;
 
-signed main()
-{
-    io;
-    int arr[] {1, 2, 3, 4, 4, 5, 5};
-    int arr_size = sizeof(arr)/4;
-    int target = 4;
-    int idx = upper_bound(arr, arr+arr_size, target) - arr;
-    cout << idx << endl;
-    return 0;
-    int ans = -1;
-    if (arr[idx] == target)
-    {
-        ans = arr[idx];
+/*   /\_/\
+*   (= ._.)
+*   / >  \>
+*/
+
+signed main() {
+    cin.tie(nullptr)->sync_with_stdio(0);
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int &i : a) cin>>i;
+    ll ans=0;
+    for(int i=n-1; i>=0; i--) {
+        ans+=upper_bound(a.begin(),a.begin()+i,a[i]>>1)-a.begin();
     }
-    cout << (ans == -1 ? "numero nao encontrado\n" : "numero encontrado\n");
+    cout<<ans<<'\n';
     return 0;
 }

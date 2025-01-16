@@ -8,7 +8,18 @@ using ll = long long;
 */
 
 void solve() {
-    
+    int n, ans=0;
+    cin>>n;
+    bool a[51]={false};
+    for (int i=0; i<n; i++) {
+        int x;
+        cin>>x;
+        if (a[x]) {
+            ans++;
+        }
+        a[x]=!a[x];
+    }
+    cout<<ans<<'\n';
 }
 
 

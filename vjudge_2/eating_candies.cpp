@@ -21,8 +21,8 @@ signed main(){
       if(ali<=bob)
         ali+=a[l++];
       else
-        bob+=a[r--];
       if(ali==bob)
+        bob+=a[r--];
         max=eated;
     }
     cout<<max<<(!n?"":"\n");

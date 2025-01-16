@@ -18,9 +18,10 @@ int dfs(int v) {
     c += dfs(sub);
   }
   ans[v] = c;
+  return c;
 }
 
-signed main()
+int32_t main()
 {
   IOS;
   int n;
