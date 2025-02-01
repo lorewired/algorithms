@@ -14,11 +14,9 @@ vector<int> bridges;
 
 void dfs(int v) {
   vis[v] = 1;
-  for (int sub : nodes[v]) {
-    if (!vis[sub]) {
+  for (int sub : nodes[v])
+    if (!vis[sub])
       dfs(sub);
-    }
-  }
 }
 
 int32_t main()
@@ -41,8 +39,7 @@ int32_t main()
   }
   int sz = bridges.size();
   cout << sz-1 << '\n';
-  for (int i = 0; i < sz-1; i++) {
+  for (int i = 0; i < sz-1; i++)
     cout << bridges[i] << ' ' << bridges[i+1] << '\n';
-  }
   return 0;
 }

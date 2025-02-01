@@ -11,17 +11,24 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<pi> vpi;
 typedef vector<vpi> vvpi;
-const int mod = 1e9+7;
+
+/*   /\_/\
+*   (= ._.)
+*   / >  \>
+*/
+
+int pow_bin(int base, int expo, int mod) {
+  int ret = 1;
+  while(expo != 0) {
+    if(expo & 1) ret = (ret * base) % mod;
+    base = (base * base) % mod;
+    expo /= 2;
+  }
+  return ret;
+}
 
 signed main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n[5] = {1, 2, 3, 4, 5};
-  cout << (lower_bound(n, n+5, 6)-n) << '\n';
+
   return 0;
 }
-
-/* \    /\
-    )  ( ') - use dp bro
-   (  /  )
-    \(__)|
-*/

@@ -13,15 +13,25 @@ typedef vector<pi> vpi;
 typedef vector<vpi> vvpi;
 const int mod = 1e9+7;
 
+/*   /\_/\
+*   (= ._.)
+*   / >  \>
+*/
+
 signed main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n[5] = {1, 2, 3, 4, 5};
-  cout << (lower_bound(n, n+5, 6)-n) << '\n';
+  int n, m;
+  cin >> n >> m;
+  vi c(n), dp(m+1);
+  for(int &i : c) cin >> i;
+  dp[0] = 1;
+  for(int j=0; j<n; j++) {
+    for(int i=1; i<=m; i++) {
+      if(i >= c[j]) {
+        dp[i] += dp[i-c[j]] % mod;
+      }
+    }
+  }
+  cout << dp[m] % mod << '\n';
   return 0;
 }
-
-/* \    /\
-    )  ( ') - use dp bro
-   (  /  )
-    \(__)|
-*/

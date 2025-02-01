@@ -11,7 +11,7 @@ int c = 0;
 
 void fall(int i) {
   if (!vis[i]) c++;
-  else  vis[i] = true;
+  else vis[i] = true;
   for (int n : nodes[i])
     if (!vis[n])
       fall(n);

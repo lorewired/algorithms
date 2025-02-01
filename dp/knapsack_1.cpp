@@ -15,8 +15,7 @@ const int mod = 1e9+7;
 
 signed main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n[5] = {1, 2, 3, 4, 5};
-  cout << (lower_bound(n, n+5, 6)-n) << '\n';
+  
   return 0;
 }
 
