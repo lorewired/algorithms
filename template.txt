@@ -1,16 +1,26 @@
 #include <bits/stdc++.h>
-
-#define import <ElPsyKongroo>
-#define int long long
-#define IOS \
-  ios_base::sync_with_stdio(false); \
-  cin.tie(nullptr);
-
 using namespace std;
+#define int long long
+#define INF LLONG_MAX
+#define pb push_back
+#define all(v) v.begin(), v.end()
+#define lb lower_bound
+#define ub upper_bound
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pi> vpi;
+typedef vector<vpi> vvpi;
+const int mod = 1e9+7;
 
-int32_t main()
-{
-  IOS;
+signed main() {
+  cin.tie(nullptr)->sync_with_stdio(0);
   
   return 0;
 }
+
+/* \    /\
+    )  ( ') - use dp bro
+   (  /  )
+    \(__)|
+*/
