@@ -1,5 +1,5 @@
 {
-  "vscord.enabled": false,
+  "vscord.enabled": true,
   "files.associations": {
     "complex": "cpp"
   }

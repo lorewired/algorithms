@@ -2,6 +2,8 @@
 using namespace std;
 #define int long long
 #define INF LLONG_MAX
+#define F first
+#define S second
 #define pb push_back
 #define all(v) v.begin(), v.end()
 #define lb lower_bound
@@ -13,11 +15,6 @@ typedef vector<pi> vpi;
 typedef vector<vpi> vvpi;
 const int mod = 1e9+7;
 
-/*   /\_/\
-*   (= ._.)
-*   / >  \>
-*/
-
 signed main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int n, m;
@@ -28,10 +25,16 @@ signed main() {
   for(int i=1; i<=m; i++) {
     for(int j=0; j<n; j++) {
       if(i >= c[j]) {
-        dp[i] += dp[i-c[j]] % mod;
+        dp[i] += dp[i-c[j]];
       }
     }
   }
-  cout << dp[m] % mod << '\n';
+  cout << dp[n] << '\n';
   return 0;
 }
+
+/* \    /\
+    )  ( ') - use dp bro
+   (  /  )
+    \(__)|
+*/
