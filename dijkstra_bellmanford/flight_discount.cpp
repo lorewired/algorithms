@@ -1,66 +1,57 @@
 #include <bits/stdc++.h>
-using namespace std;
 #define int long long
-#define INF LLONG_MAX
 #define pb push_back
-#define all(v) v.begin(), v.end()
-#define lb lower_bound
-#define ub upper_bound
-typedef pair<int, int> pi;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<pi> vpi;
-typedef vector<vpi> vvpi;
+#define inf LLONG_MAX
+#define V vector
+const int mod = (int)1e9+7;
 
-/*   /\_/\
-*   (= ._.)
-*   / >  \>
-*/
+using namespace std;
 
-using tiii = tuple<int, int, int>;
-vvpi adj;
-int n, m;
+V<V<pair<int, int>>> adj;
+V<V<int>> dist;
 
-int dij() {
-  vvi dist(n, vi(2, INF));
-  priority_queue<tiii, vector<tiii>, greater<tiii>> pq;
+void dij() {
+    set<pair<int, int>> st;
+    st.insert({0, 1});
+    dist[1][0] = dist[1][1] = 0;
 
-  dist[1][0] = 0;
-  pq.push({0, 1, 0});
+    while(st.size()) {
+        auto [w, v] = *st.begin();  
+        st.erase(st.begin());
 
-  while(pq.size()) {
-    auto [cost, v, used] = pq.top();
-    pq.pop();
+        for(auto [uw, uv] : adj[v]) {
+            if(dist[v][0]+uw < dist[uv][0]) {
+                st.erase({dist[uv][0], uv});
+                dist[uv][0] = dist[v][0] + uw;
+                st.insert({dist[uv][0], uv});
+            }
 
-    if(cost > dist[v][used]) continue;
+            if(dist[v][0]+uw/2 < dist[uv][1]) {
+                st.erase({dist[uv][1], uv});
+                dist[uv][1] = dist[v][0]+uw/2;
+                st.insert({dist[uv][1], uv});
+            }
 
-    for(auto [u, w] : adj[v]) {
-      if(dist[u][used] > cost + w) {
-        dist[u][used] = cost + w;
-        pq.push({dist[u][used], u, used});
-      }
-
-      if(!used && dist[u][1] > (cost + w) / 2) {
-        dist[u][1] = (cost + w) / 2;
-        pq.push({dist[u][1], u, 1});
-      }
+            if(dist[v][1]+uw < dist[uv][1]) {
+                st.erase({dist[uv][1], uv});
+                dist[uv][1] = dist[v][1]+uw;
+                st.insert({dist[uv][1], uv});
+            }
+        }
     }
-  }
-
-  return min(dist[n][0], dist[n][1]);
 }
 
-
 signed main() {
-  cin.tie(nullptr)->sync_with_stdio(0);
-  cin >> n >> m;
-  adj = vvpi(n);
-  while(m--) {
-    int x, y, p;
-    cin >> x >> y >> p;
-    x--; y--;
-    adj[x].pb({y, p});
-  }
-  cout << dij() << '\n';
-  return 0;
+    int n, m;
+    cin >> n >> m;
+    adj =V<V<pair<int, int>>>(n+1);
+    dist =V<V<int>>(n+1, V<int>(2, inf));
+    while(m--) {
+        int x, y, z;
+        cin >> x >> y >> z;
+        adj[x].pb({z, y});
+    }
+    dij();
+    cout << min(dist[n][0], dist[n][1]);
+    return 0;
 }

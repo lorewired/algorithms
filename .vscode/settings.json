@@ -68,7 +68,11 @@
       "typeindex": "cpp",
       "typeinfo": "cpp",
       "valarray": "cpp",
-      "string_view": "cpp"
+      "string_view": "cpp",
+      "any": "cpp",
+      "expected": "cpp",
+      "optional": "cpp",
+      "variant": "cpp"
    },
    "vscord.enabled": true
 }

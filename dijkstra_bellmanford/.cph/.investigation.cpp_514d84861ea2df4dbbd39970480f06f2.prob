@@ -1,0 +1,1 @@
+{"name":"Local: investigation","url":"/home/lore/Desktop/algorithms/dijkstra_bellmanford/investigation.cpp","tests":[{"id":1742959359883,"input":"4 5\n1 4 5\n1 2 4\n2 4 5\n1 3 2\n3 4 3\n","output":"5 2 1 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/lore/Desktop/algorithms/dijkstra_bellmanford/investigation.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"/home/lore/Desktop/algorithms/segtree/main.cpp","tests":[{"id":1742784515545,"input":"4 5\n2 1 5\n1 3 4\n2 3 6\n4 2 8\n3 4 12\n1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/lore/Desktop/algorithms/segtree/main.cpp","group":"local","local":true}

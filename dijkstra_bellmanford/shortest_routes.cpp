@@ -1,39 +1,45 @@
 #include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
+#define int long long
+#define pb push_back
+#define inf LLONG_MAX
+#define V vector
+const int mod = (int)1e9+7;
 
-/*   /\_/\
-*   (= ._.)
-*   / >  \>
-*/
+using namespace std;
+
+V<V<pair<int, int>>> adj;
+V<int> dist;
+
+void dij(int s) {
+  set<pair<int, int>> st;
+  st.insert({0, s});
+  dist[s] = 0;
+
+  while(st.size()) {
+    auto [w, cur] = *st.begin();
+    st.erase(st.begin());
+
+    for(auto [uw, u] : adj[cur]) {
+      if(dist[cur]+uw < dist[u]) {
+        st.erase({dist[u], u});
+        dist[u] = dist[cur]+uw;
+        st.insert({dist[u], u});
+      }
+    }
+  }
+}
 
 signed main() {
-    cin.tie(nullptr)->sync_with_stdio(0);
-    int n, m;
-    cin >> n >> m;
-    vector<vector<pair<int, int>>> adj(n);
-    vector<int> dist(n, LONG_LONG_MAX);
-    while(m--) {
-        int x, y, w;
-        cin >> x >> y >> w;
-        adj[x-1].push_back({y-1, w});
-    }
-    dist[0] = 0;
-    set<pair<int, int>> st;
-    st.insert({0, 0});
-    while(st.size()) {
-        int u = st.begin()->second;
-        st.erase(st.begin());
-
-        for(auto i : adj[u]) {
-            int v = i.first, w = i.second;
-            if(dist[u]+w < dist[v]) {
-                st.erase({dist[v], v});
-                dist[v] = dist[u]+w;
-                st.insert({dist[v], v});
-            }
-        }
-    }
-    for(int i : dist) cout << i << ' ';
-    return 0;
+  int n, m;
+  cin >> n >> m;
+  adj = V<V<pair<int, int>>>(n+1);
+  dist = V<int>(n+1, inf);
+  while(m--) {
+    int x, y, z;
+    cin >> x >> y >> z;
+    adj[x].pb({z, y});
+  }
+  dij(1);
+  for(int i=1;i<=n;i++) cout << dist[i] << ' ';
+  return 0;
 }

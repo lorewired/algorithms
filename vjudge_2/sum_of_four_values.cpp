@@ -1,43 +1,55 @@
 #include <bits/stdc++.h>
-#define f first
-#define s second
+using namespace std;
+#define int long long
+#define INF LLONG_MAX
+#define F first
+#define S second
 #define pb push_back
+#define all(v) v.begin(), v.end()
 #define lb lower_bound
 #define ub upper_bound
-#define sz(x) (int)x.size()
-#define all(x) x.begin(), x.end()
-using namespace std;
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pi> vpi;
+typedef vector<vpi> vvpi;
+const int mod = 1e9+7;
 
-signed main(){
-  ios_base::sync_with_stdio(false);
-  cin.tie(nullptr);
+signed main() {
+  cin.tie(nullptr)->sync_with_stdio(0);
   int n, t;
   cin >> n >> t;
-  if (n < 4) {
-    cout << "IMPOSSIBLE\n";
+  vpi v(n);
+  for(int i=0; i<n; i++) {
+    int x;
+    cin >> x;
+    v[i] = {x, i+1};
   }
-  else {
-    vector<pair<int, int>> v(n);
-    for (int i = 0; i < n; i++) {
-      v[i].s = i+1;
-      cin >> v[i].f;
-    }
-    map<int, vector<pair<int, int>>> mp;
-    for (int i = 0; i < n; i++) {
-      for (int j = i+1; j < n; j++) {
-        int diff = t - (v[i].f + v[j].f);
-        if (mp.count(diff)) {
-          for (auto p : mp[diff]) {
-            if (p.f != v[i].s && p.f != v[j].s && p.s != v[i].s && p.s != v[j].s) {
-              cout << v[i].s << ' ' << v[j].s << ' ' << p.f << ' ' << p.s << '\n';
-              return 0;
-            }
+  if(n < 4) {
+    cout << "IMPOSSIBLE\n";
+    return 0;
+  }
+  map<int, vpi> mp;
+  for(int i=0; i<n; i++) {
+    for(int j=i+1; j<n; j++) {
+      int dif = t - (v[i].F+v[j].F);
+      if(mp.count(dif)) {
+        for(auto p : mp[dif]) {
+          if(p.F != v[i].S && p.F != v[j].S && p.S != v[i].S && p.S != v[j].S) {
+            cout << v[i].S << ' ' << v[j].S << ' ' << p.F << ' ' << p.S << '\n';
+            return 0;
           }
         }
-        mp[v[i].f + v[j].f].pb({v[i].s, v[j].s});
       }
+      mp[v[i].F+v[j].F].pb({v[i].S, v[j].S});
     }
-    cout << "IMPOSSIBLE\n";
   }
+  cout << "IMPOSSIBLE\n";
   return 0;
-}   
+}
+
+/* \    /\
+    )  ( ') - use dp bro
+   (  /  )
+    \(__)|
+*/

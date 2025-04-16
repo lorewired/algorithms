@@ -45,7 +45,7 @@ void dijkstra(int src, int dest, int t) {
 void solve() {
 
   int n, dest, t, m;
-  cin >> n >> dest >> t >> m;
+  cin >> n >> dest >> t >> m; 
   adj = vvpi(n+1);
   ans = 0;
   

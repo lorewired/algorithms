@@ -1,0 +1,6 @@
+{
+  "vscord.enabled": false,
+  "files.associations": {
+    "chrono": "cpp"
+  }
+}
