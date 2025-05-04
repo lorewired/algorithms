@@ -25,8 +25,8 @@ signed main() {
   vi c(n), dp(m+1);
   for(int &i : c) cin >> i;
   dp[0] = 1;
-  for(int j=0; j<n; j++) {
-    for(int i=1; i<=m; i++) {
+  for(int i=1; i<=m; i++) {
+    for(int j=0; j<n; j++) {
       if(i >= c[j]) {
         dp[i] += dp[i-c[j]] % mod;
       }

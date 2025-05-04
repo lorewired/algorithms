@@ -2,14 +2,11 @@
 using namespace std;
 
 #define V vector
-#define ar array
+#define int long long
 #define _ cin.tie(0)->sync_with_stdio(0);
 
-typedef long long ll;
+const int M = 1e9+7, maxN = 100005;
 
-const int M=(int)1e9+7, mxN=500;
-
-int main() { _
-  
+signed main() { _
   exit(0);
 }
