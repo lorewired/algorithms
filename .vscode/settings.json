@@ -72,7 +72,8 @@
       "any": "cpp",
       "expected": "cpp",
       "optional": "cpp",
-      "variant": "cpp"
+      "variant": "cpp",
+      "span": "cpp"
    },
    "vscord.enabled": true
 }
