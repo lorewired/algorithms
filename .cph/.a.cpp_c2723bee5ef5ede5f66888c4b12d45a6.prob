@@ -1,1 +1,0 @@
-{"name":"Local: a","url":"/home/lore/Desktop/algorithms/a.cpp","tests":[{"id":1743925435965,"input":"3 4 6\n0 -1 3 -1\n4 1 -1 1\n4 -1 2 -1\n","output":"8\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/lore/Desktop/algorithms/a.cpp","group":"local","local":true}
